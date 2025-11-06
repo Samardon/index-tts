@@ -352,7 +352,8 @@ class IndexTTS2:
               emo_audio_prompt=None, emo_alpha=1.0,
               emo_vector=None,
               use_emo_text=False, emo_text=None, use_random=False, interval_silence=200,
-              verbose=False, max_text_tokens_per_segment=120, stream_return=False, more_segment_before=0, **generation_kwargs):
+              #verbose=False, max_text_tokens_per_segment=120, stream_return=False, more_segment_before=0, **generation_kwargs):
+              verbose=False, max_text_tokens_per_segment=60, stream_return=False, more_segment_before=0, **generation_kwargs):
         if stream_return:
             return self.infer_generator(
                 spk_audio_prompt, text, output_path,
@@ -377,7 +378,8 @@ class IndexTTS2:
               emo_audio_prompt=None, emo_alpha=1.0,
               emo_vector=None,
               use_emo_text=False, emo_text=None, use_random=False, interval_silence=200,
-              verbose=False, max_text_tokens_per_segment=120, stream_return=False, quick_streaming_tokens=0, **generation_kwargs):
+              #verbose=False, max_text_tokens_per_segment=120, stream_return=False, quick_streaming_tokens=0, **generation_kwargs):
+              verbose=False, max_text_tokens_per_segment=60, stream_return=False, quick_streaming_tokens=0, **generation_kwargs):
         print(">> starting inference...")
         self._set_gr_progress(0, "starting inference...")
         if verbose:
@@ -843,3 +845,4 @@ if __name__ == "__main__":
         tts.infer(spk_audio_prompt=prompt_wav, text=text, output_path="gen.wav", verbose=True)
         time_buckets.append(time.time() - start_time)
     print(time_buckets)
+
