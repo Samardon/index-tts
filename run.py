@@ -28,7 +28,7 @@ j = 0
 while j < len(output_lines):
 	k = j+1
 	this_text = output_lines[j]
-	tts.infer(spk_audio_prompt='input/Segments/Dad-is-a-hero_S01E01-' + k + '.wav', text=this_text, output_path="../../working/" + k + ".wav", verbose=True)
+	tts.infer(spk_audio_prompt='input/Segments/Dad-is-a-hero_S01E01-' + k + '.wav', text=this_text, output_path="../output" + k + ".wav", verbose=True)
 #for line in output_lines:
 #    print(line)
 
